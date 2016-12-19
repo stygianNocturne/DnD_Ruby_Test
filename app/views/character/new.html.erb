@@ -1,0 +1,82 @@
+<h1>Create new character</h1>
+
+<%= form_tag action: 'create' do %>
+    <p>
+      <label for = 'character_name'>Name</label>:
+      <%= text_field 'character', 'name', autofocus: true %>
+    </p>
+
+    <p>
+      <label for = 'character_alignment'>Alignment</label>:
+      <%= select 'character', 'alignment1', options_for_select([['Lawful', 'lawful'],
+                                                       ['Neutral', 'neutral'],
+                                                       ['Chaotic', 'chaotic']], 'neutral') %>
+      <%= select 'character', 'alignment2', options_for_select([['Good', 'good'],
+                                                               ['Neutral', 'neutral'],
+                                                               ['Evil', 'evil']], 'neutral') %>
+    </p>
+
+    <p>
+      <label for = 'character_race'>Race</label>:
+      <%= select 'character', 'race_id', options_for_select(@races.collect{|r| [r.name, r.id]}) %>
+    </p>
+
+    <p>
+      <label for = 'character_category'>Class</label>:
+      <%= select 'character', 'category_id', options_for_select(@categories.collect{|r| [r.name, r.id]}) %>
+    </p>
+
+    <p>
+      <label for = 'character_maxHP'>Hit Points</label>:
+      <%= number_field 'character', 'maxHP',value: 10, min: 1, max: 20 %>
+    </p>
+
+
+    <p>
+      <label for = 'character_armorClass'>Armor Class</label>:
+      <%= number_field 'character', 'maxHP',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_strRoll'>Strength Roll</label>:
+      <%= number_field 'character', 'strRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_dexRoll'>Dexterity Roll</label>:
+      <%= number_field 'character', 'dexRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_conRoll'>Constitution Roll</label>:
+      <%= number_field 'character', 'conRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_perRoll'>Perception Roll</label>:
+      <%= number_field 'character', 'perRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_intRoll'>Intelligence Roll</label>:
+      <%= number_field 'character', 'intRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_wisRoll'>Wisdom Roll</label>:
+      <%= number_field 'character', 'wisRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_chrRoll'>Charisma Roll</label>:
+      <%= number_field 'character', 'chrRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <p>
+      <label for = 'character_stlRoll'>Stealth Roll</label>:
+      <%= number_field 'character', 'stlRoll',value: 10, min: 1, max: 20 %>
+    </p>
+
+    <%= submit_tag 'Create your Character' %>
+
+<% end -%>

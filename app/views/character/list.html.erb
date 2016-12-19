@@ -1,0 +1,13 @@
+<% if @characters.blank? %>
+  <p>There are not any characters currently in the system.</p>
+<% else %>
+  <p>These are the current characters in our system:</p>
+
+  <ul id="characters">
+    <% @characters.each do |c| %>
+      <li><%= link_to c.name, {action: 'show', id: c.id} -%></li>
+    <% end %>
+  </ul>
+
+<% end %>
+<p><%= link_to 'Add new Character', {action: 'new'} %></p>

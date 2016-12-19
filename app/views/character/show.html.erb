@@ -1,0 +1,29 @@
+<h1><%= @character.name %></h1>
+
+<p>
+  <strong>Race:</strong> <%= @character.race.name %>
+  <br>
+  <strong>Class:</strong> <%= @character.category.name %>
+  <br>
+  <strong>Alignment:</strong> <%= @character.alignment1 %> <%= @character.alignment2 %>
+  <br>
+  <strong>HP:</strong> <%= @character.curHP %> / <%= @character.maxHP %>
+  <br>
+  <strong>Attribute Rolls</strong>:
+    <br>
+    Strength: <%= @character.strRoll %>
+    <br>
+    Dexterity: <%= @character.dexRoll %>
+    <br>
+    Constitution: <%= @character.conRoll %>
+    <br>
+    Perception: <%= @character.perRoll %>
+    <br>
+    Intelligence: <%= @character.intRoll %>
+    <br>
+    Wisdom: <%= @character.wisRoll %>
+    <br>
+    Charisma: <%= @character.chrRoll %>
+    <br>
+    Stealth: <%= @character.stlRoll %>
+</p>
