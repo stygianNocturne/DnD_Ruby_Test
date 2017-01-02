@@ -1,29 +1,39 @@
 <h1><%= @character.name %></h1>
 
-<p>
-  <strong>Race:</strong> <%= @character.race.name %>
-  <br>
-  <strong>Class:</strong> <%= @character.category.name %>
-  <br>
-  <strong>Alignment:</strong> <%= @character.alignment1 %> <%= @character.alignment2 %>
-  <br>
-  <strong>HP:</strong> <%= @character.curHP %> / <%= @character.maxHP %>
-  <br>
-  <strong>Attribute Rolls</strong>:
+<div class="col-xs-4">
+  <p>
+    <strong>Race:</strong> <%= @character.race.name %>
     <br>
-    Strength: <%= @character.strRoll %>
+    <strong>Class:</strong> <%= @character.category.name %>
     <br>
-    Dexterity: <%= @character.dexRoll %>
+    <strong>Alignment:</strong> <%= @character.alignment1 %> <%= @character.alignment2 %>
     <br>
-    Constitution: <%= @character.conRoll %>
+    <strong>HP:</strong> <%= @character.curHP %> / <%= @character.maxHP %>
     <br>
-    Perception: <%= @character.perRoll %>
+    <strong>Attribute Rolls</strong>:
     <br>
-    Intelligence: <%= @character.intRoll %>
+    <div class="col-xs-6">Strength:</div>
+    <div class="col-xs-6"><%= @character.strRoll %></div>
     <br>
-    Wisdom: <%= @character.wisRoll %>
+    <div class="col-xs-6">Dexterity:</div>
+    <div class="col-xs-6"><%= @character.dexRoll %></div>
     <br>
-    Charisma: <%= @character.chrRoll %>
+    <div class="col-xs-6">Constitution:</div>
+    <div class="col-xs-6"><%= @character.conRoll %></div>
     <br>
-    Stealth: <%= @character.stlRoll %>
-</p>
+    <div class="col-xs-6">Perception:</div>
+    <div class="col-xs-6"><%= @character.perRoll %></div>
+    <br>
+    <div class="col-xs-6">Intelligence:</div>
+    <div class="col-xs-6"><%= @character.intRoll %></div>
+    <br>
+    <div class="col-xs-6">Wisdom:</div>
+    <div class="col-xs-6"><%= @character.wisRoll %></div>
+    <br>
+    <div class="col-xs-6">Charisma:</div>
+    <div class="col-xs-6"><%= @character.chrRoll %></div>
+    <br>
+    <div class="col-xs-6">Stealth:</div>
+    <div class="col-xs-6"><%= @character.stlRoll %></div>
+  </p>
+</div>

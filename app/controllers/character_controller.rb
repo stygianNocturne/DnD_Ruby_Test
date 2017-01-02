@@ -1,4 +1,6 @@
 class CharacterController < ApplicationController
+  layout 'standard'
+
   def list
     @characters = Character.all
   end
