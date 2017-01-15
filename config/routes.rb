@@ -53,4 +53,14 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get 'character/list'
+  get 'character/new'
+  post 'character/create'
+  patch 'character/update'
+  get 'character/show'
+  get 'character/edit'
+  get 'character/delete'
+  get 'character/update'
+
 end
