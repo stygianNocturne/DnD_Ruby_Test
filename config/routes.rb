@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :character, except: ['index']
-  get 'character/list'
+  resources :character
   root 'main#index'
 
 end

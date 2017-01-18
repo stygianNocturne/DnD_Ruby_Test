@@ -1,7 +1,7 @@
 class CharacterController < ApplicationController
   layout 'standard'
 
-  def list
+  def index
     @characters = Character.all
   end
 
@@ -64,7 +64,7 @@ class CharacterController < ApplicationController
 
   def delete
     Character.find(params[:id]).destroy
-    redirect_to action: 'list'
+    redirect_to action: 'index'
   end
 
 end
