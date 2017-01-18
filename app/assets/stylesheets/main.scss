@@ -1,0 +1,37 @@
+body {
+  font-family: 'Athiti', sans-serif;
+  font-size: small;
+  font-color: #000;
+  background-color: #fff;
+}
+
+a:link, a:active, a:visited {
+  color: seagreen;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
+p {
+  line-height: 150%;
+}
+
+div#header {
+  font-family: 'Modern Antiqua', cursive;
+  padding-bottom: 15px;
+  .user-bar-buttons {
+    text-align: right;
+    padding: 20px;
+  }
+  border: 1px solid black;
+}
+
+div#content {
+  font-family: 'Athiti', sans-serif;
+}
+
+div#sidebar {
+  width: 200px;
+  margin-left: 480px;
+}

@@ -8,4 +8,4 @@ This is a list of the gems used in this project, as well as links to their respe
 
 * [Bootstrap-Sass (CSS)](https://github.com/twbs/bootstrap-sass)
 * [Devise (Authentication)](https://github.com/plataformatec/devise)
-* [CanCanCan (Authorization)] (https://github.com/CanCanCommunity/cancancan)
+* [CanCanCan (Authorization)](https://github.com/CanCanCommunity/cancancan)
