@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>D&D Character Builder</title>
+    <%= stylesheet_link_tag 'main' %>
+    <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+  </head>
+
+  <body id="DnD">
+    <div id="container">
+
+      <div id="header">
+        <div class="col-xs-6">
+          <h1>DnD Character Builder</h1>
+        </div>
+        <div class="col-xs-6">
+          <div class="user-bar-buttons">
+            <% if user_signed_in? %>
+              <%= current_user.email %>
+              <%= link_to 'Edit Account', edit_user_password_path, class: 'btn btn-warning' %>
+            <% else %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success' %>
+              <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div id="content">
+        <%= yield -%>
+      </div>
+
+      <div id="sidebar"></div>
+
+    </div>
+  </body>
+
+</html>
