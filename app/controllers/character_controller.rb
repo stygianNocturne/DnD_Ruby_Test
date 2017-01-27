@@ -1,3 +1,4 @@
+# Controller for the character pages of this site
 class CharacterController < ApplicationController
   layout 'standard'
 

@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116020454) do
+ActiveRecord::Schema.define(version: 20170127033034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at",          null: false
@@ -22,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170116020454) do
     t.string   "name"
     t.string   "primary_attribute"
     t.string   "secondary_attribute"
+    t.integer  "campaign_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -44,12 +51,14 @@ ActiveRecord::Schema.define(version: 20170116020454) do
     t.integer  "maxHP"
     t.integer  "curHP"
     t.integer  "armorClass"
+    t.integer  "campaign_id"
   end
 
   create_table "races", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
+    t.integer  "campaign_id"
   end
 
   create_table "users", force: :cascade do |t|
