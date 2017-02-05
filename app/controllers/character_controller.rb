@@ -22,7 +22,7 @@ class CharacterController < ApplicationController
     @character.race_id = character_params[:race_id].to_i
     @character.category_id = character_params[:category_id].to_i
     @character.level = 1
-    @character.curHP = character_params[:max_hp]
+    @character.cur_hp = character_params[:max_hp]
 
 
     if @character.save

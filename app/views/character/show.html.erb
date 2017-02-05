@@ -6,34 +6,34 @@
     <br>
     <strong>Class:</strong> <%= @character.category.name %>
     <br>
-    <strong>Alignment:</strong> <%= @character.alignment1 %> <%= @character.alignment2 %>
+    <strong>Alignment:</strong> <%= @character.alignment1.humanize %> <%= @character.alignment2.humanize %>
     <br>
-    <strong>HP:</strong> <%= @character.curHP %> / <%= @character.maxHP %>
+    <strong>HP:</strong> <%= @character.cur_hp %> / <%= @character.max_hp %>
     <br>
     <strong>Attribute Rolls</strong>:
     <br>
     <div class="col-xs-6">Strength:</div>
-    <div class="col-xs-6"><%= @character.strRoll %></div>
+    <div class="col-xs-6"><%= @character.str_level %></div>
     <br>
     <div class="col-xs-6">Dexterity:</div>
-    <div class="col-xs-6"><%= @character.dexRoll %></div>
+    <div class="col-xs-6"><%= @character.dex_level %></div>
     <br>
     <div class="col-xs-6">Constitution:</div>
-    <div class="col-xs-6"><%= @character.conRoll %></div>
+    <div class="col-xs-6"><%= @character.con_level %></div>
     <br>
     <div class="col-xs-6">Perception:</div>
-    <div class="col-xs-6"><%= @character.perRoll %></div>
+    <div class="col-xs-6"><%= @character.per_level %></div>
     <br>
     <div class="col-xs-6">Intelligence:</div>
-    <div class="col-xs-6"><%= @character.intRoll %></div>
+    <div class="col-xs-6"><%= @character.int_level %></div>
     <br>
     <div class="col-xs-6">Wisdom:</div>
-    <div class="col-xs-6"><%= @character.wisRoll %></div>
+    <div class="col-xs-6"><%= @character.wis_level %></div>
     <br>
     <div class="col-xs-6">Charisma:</div>
-    <div class="col-xs-6"><%= @character.chrRoll %></div>
+    <div class="col-xs-6"><%= @character.chr_level %></div>
     <br>
     <div class="col-xs-6">Stealth:</div>
-    <div class="col-xs-6"><%= @character.stlRoll %></div>
+    <div class="col-xs-6"><%= @character.stl_level %></div>
   </p>
 </div>

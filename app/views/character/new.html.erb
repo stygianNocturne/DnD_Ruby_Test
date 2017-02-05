@@ -1,6 +1,6 @@
 <h1>Create new character</h1>
 
-<%= form_for Character.new(), action: 'create' do |f| %>
+<%= form_for @character, url: character_index_path, html: {method: :post} do |f| %>
     <p>
       <label for = 'character_name'>Name</label>:
       <%= f.text_field 'name', autofocus: true %>
@@ -38,42 +38,42 @@
     </p>
 
     <p>
-      <label for = 'character_str_level'>Strength Roll</label>:
+      <label for = 'character_str_level'>Strength Level</label>:
       <%= f.number_field 'str_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_dex_level'>Dexterity Roll</label>:
+      <label for = 'character_dex_level'>Dexterity Level</label>:
       <%= f.number_field 'dex_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_con_level'>Constitution Roll</label>:
+      <label for = 'character_con_level'>Constitution Level</label>:
       <%= f.number_field 'con_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_per_level'>Perception Roll</label>:
+      <label for = 'character_per_level'>Perception Level</label>:
       <%= f.number_field 'per_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_int_level'>Intelligence Roll</label>:
+      <label for = 'character_int_level'>Intelligence Level</label>:
       <%= f.number_field 'int_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_wis_level'>Wisdom Roll</label>:
+      <label for = 'character_wis_level'>Wisdom Level</label>:
       <%= f.number_field 'wis_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_chr_level'>Charisma Roll</label>:
+      <label for = 'character_chr_level'>Charisma Level</label>:
       <%= f.number_field 'chr_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_stl_levle'>Stealth Roll</label>:
+      <label for = 'character_stl_levle'>Stealth Level</label>:
       <%= f.number_field 'stl_level',value: 0, min: -10, max: 10 %>
     </p>
 
