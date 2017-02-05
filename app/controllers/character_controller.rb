@@ -22,7 +22,7 @@ class CharacterController < ApplicationController
     @character.race_id = character_params[:race_id].to_i
     @character.category_id = character_params[:category_id].to_i
     @character.level = 1
-    @character.curHP = character_params[:maxHP]
+    @character.cur_hp = character_params[:max_hp]
 
 
     if @character.save
@@ -36,7 +36,7 @@ class CharacterController < ApplicationController
   end
 
   def new_character_params
-    params.require(:character).permit(:name, :alignment1, :alignment2, :race_id, :category_id, :strRoll, :dexRoll, :conRoll, :perRoll, :intRoll, :wisRoll, :chrRoll, :stlRoll, :maxHP)
+    params.require(:character).permit(:name, :alignment1, :alignment2, :race_id, :category_id, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
   end
 
   def edit
@@ -60,7 +60,7 @@ class CharacterController < ApplicationController
   end
 
   def update_character_params
-    params.require(:character).permit(:name, :strRoll, :dexRoll, :conRoll, :perRoll, :intRoll, :wisRoll, :chrRoll, :stlRoll, :maxHP)
+    params.require(:character).permit(:name, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
   end
 
   def delete
