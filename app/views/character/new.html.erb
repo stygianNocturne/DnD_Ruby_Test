@@ -1,82 +1,82 @@
 <h1>Create new character</h1>
 
-<%= form_tag action: 'create' do %>
+<%= form_for Character.new(), action: 'create' do |f| %>
     <p>
       <label for = 'character_name'>Name</label>:
-      <%= text_field 'character', 'name', autofocus: true %>
+      <%= f.text_field 'name', autofocus: true %>
     </p>
 
     <p>
       <label for = 'character_alignment'>Alignment</label>:
-      <%= select 'character', 'alignment1', options_for_select([['Lawful', 'lawful'],
+      <%= f.select 'alignment1', options_for_select([['Lawful', 'lawful'],
                                                        ['Neutral', 'neutral'],
                                                        ['Chaotic', 'chaotic']], 'neutral') %>
-      <%= select 'character', 'alignment2', options_for_select([['Good', 'good'],
+      <%= f.select 'alignment2', options_for_select([['Good', 'good'],
                                                                ['Neutral', 'neutral'],
                                                                ['Evil', 'evil']], 'neutral') %>
     </p>
 
     <p>
       <label for = 'character_race'>Race</label>:
-      <%= select 'character', 'race_id', options_for_select(@races.collect{|r| [r.name, r.id]}) %>
+      <%= f.select 'race_id', options_for_select(@races.collect{|r| [r.name, r.id]}) %>
     </p>
 
     <p>
       <label for = 'character_category'>Class</label>:
-      <%= select 'character', 'category_id', options_for_select(@categories.collect{|r| [r.name, r.id]}) %>
+      <%= f.select 'category_id', options_for_select(@categories.collect{|r| [r.name, r.id]}) %>
     </p>
 
     <p>
-      <label for = 'character_maxHP'>Hit Points</label>:
-      <%= number_field 'character', 'maxHP',value: 10, min: 1, max: 20 %>
+      <label for = 'character_max_hp'>Hit Points</label>:
+      <%= f.number_field 'max_hp', value: 10, min: 1, max: 20 %>
     </p>
 
 
     <p>
-      <label for = 'character_armorClass'>Armor Class</label>:
-      <%= number_field 'character', 'maxHP',value: 10, min: 1, max: 20 %>
+      <label for = 'character_armor_class'>Armor Class</label>:
+      <%= f.number_field 'armor_class', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_strRoll'>Strength Roll</label>:
-      <%= number_field 'character', 'strRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_str_level'>Strength Roll</label>:
+      <%= f.number_field 'str_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_dexRoll'>Dexterity Roll</label>:
-      <%= number_field 'character', 'dexRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_dex_level'>Dexterity Roll</label>:
+      <%= f.number_field 'dex_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_conRoll'>Constitution Roll</label>:
-      <%= number_field 'character', 'conRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_con_level'>Constitution Roll</label>:
+      <%= f.number_field 'con_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_perRoll'>Perception Roll</label>:
-      <%= number_field 'character', 'perRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_per_level'>Perception Roll</label>:
+      <%= f.number_field 'per_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_intRoll'>Intelligence Roll</label>:
-      <%= number_field 'character', 'intRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_int_level'>Intelligence Roll</label>:
+      <%= f.number_field 'int_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_wisRoll'>Wisdom Roll</label>:
-      <%= number_field 'character', 'wisRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_wis_level'>Wisdom Roll</label>:
+      <%= f.number_field 'wis_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_chrRoll'>Charisma Roll</label>:
-      <%= number_field 'character', 'chrRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_chr_level'>Charisma Roll</label>:
+      <%= f.number_field 'chr_level', value: 0, min: -10, max: 10 %>
     </p>
 
     <p>
-      <label for = 'character_stlRoll'>Stealth Roll</label>:
-      <%= number_field 'character', 'stlRoll',value: 10, min: 1, max: 20 %>
+      <label for = 'character_stl_levle'>Stealth Roll</label>:
+      <%= f.number_field 'stl_level',value: 0, min: -10, max: 10 %>
     </p>
 
-    <%= submit_tag 'Create your Character' %>
+    <%= f.submit 'Create your Character' %>
 
 <% end -%>

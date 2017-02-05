@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127033034) do
+ActiveRecord::Schema.define(version: 20170127045820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "campaigns", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -29,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170127033034) do
     t.string   "primary_attribute"
     t.string   "secondary_attribute"
     t.integer  "campaign_id"
+    t.text     "description"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -40,18 +43,19 @@ ActiveRecord::Schema.define(version: 20170127033034) do
     t.string   "alignment1"
     t.string   "alignment2"
     t.integer  "level"
-    t.integer  "strRoll"
-    t.integer  "dexRoll"
-    t.integer  "conRoll"
-    t.integer  "perRoll"
-    t.integer  "intRoll"
-    t.integer  "wisRoll"
-    t.integer  "chrRoll"
-    t.integer  "stlRoll"
-    t.integer  "maxHP"
-    t.integer  "curHP"
-    t.integer  "armorClass"
+    t.integer  "str_level"
+    t.integer  "dex_level"
+    t.integer  "con_level"
+    t.integer  "per_level"
+    t.integer  "int_level"
+    t.integer  "wis_level"
+    t.integer  "chr_level"
+    t.integer  "stl_level"
+    t.integer  "max_hp"
+    t.integer  "cur_hp"
+    t.integer  "armor_class"
     t.integer  "campaign_id"
+    t.integer  "user_id"
   end
 
   create_table "races", force: :cascade do |t|
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170127033034) do
     t.datetime "updated_at",  null: false
     t.string   "name"
     t.integer  "campaign_id"
+    t.text     "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +79,7 @@ ActiveRecord::Schema.define(version: 20170127033034) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
