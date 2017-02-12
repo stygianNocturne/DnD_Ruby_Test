@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
   belongs_to :campaign
   validates_inclusion_of :primary_attribute, in: ['str', 'dex', 'con', 'per', 'int', 'wis', 'chr', 'stl']
   validates_inclusion_of :secondary_attribute, in: ['str', 'dex', 'con', 'per', 'int', 'wis', 'chr', 'stl']
+
+  # TODO: Add method to get classes specific to a campaign
 end

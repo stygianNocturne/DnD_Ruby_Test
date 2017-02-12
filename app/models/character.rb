@@ -17,4 +17,6 @@ class Character < ActiveRecord::Base
   validates_inclusion_of :stl_level, in: -10..10
   validates_inclusion_of :max_hp, in: 1..100
   validates_inclusion_of :cur_hp, in: -5..100
+
+  # TODO: Add method to get characters specific to a campaign
 end

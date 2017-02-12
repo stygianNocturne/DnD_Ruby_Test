@@ -35,10 +35,6 @@ class CharacterController < ApplicationController
 
   end
 
-  def new_character_params
-    params.require(:character).permit(:name, :alignment1, :alignment2, :race_id, :category_id, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
-  end
-
   def edit
     @character = Character.find(params[:id])
     @races = Race.all
@@ -59,13 +55,19 @@ class CharacterController < ApplicationController
 
   end
 
-  def update_character_params
-    params.require(:character).permit(:name, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
-  end
-
-  def delete
+  def destroy
     Character.find(params[:id]).destroy
     redirect_to action: 'index'
+  end
+
+  private
+
+  def new_character_params
+    params.require(:character).permit(:name, :alignment1, :alignment2, :race_id, :category_id, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
+  end
+
+  def update_character_params
+    params.require(:character).permit(:name, :str_level, :dex_level, :con_level, :per_level, :int_level, :wis_level, :chr_level, :stl_level, :max_hp)
   end
 
 end
