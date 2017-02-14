@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'main#contact'
   resources :character
   resources :campaign
+  resources :category, except: [:index, :show]
+  resources :race, except: [:index, :show]
   root 'main#index'
 
 end

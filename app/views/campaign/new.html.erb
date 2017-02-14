@@ -15,6 +15,5 @@
       <%= f.submit 'Create your Campaign' %>
   <% end %>
 <% else %>
-    <p>You need to be signed in to access this page. Please sign in <%= link_to 'here', new_user_session_path %>.</p>
-
+  <%= render partial: 'shared/not_logged' %>
 <% end %>

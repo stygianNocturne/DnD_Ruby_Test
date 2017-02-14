@@ -11,7 +11,7 @@ class CampaignController < ActionController::Base
   end
 
   def new
-    @campaign = Campaign.new()
+    @campaign = Campaign.new
   end
 
   def create
@@ -55,7 +55,7 @@ class CampaignController < ActionController::Base
   end
 
   def update_campaign_params
-    params.require(:campaign).permit(:name, :description, :user_id)
+    params.require(:campaign).permit(:name, :description)
   end
 
 end

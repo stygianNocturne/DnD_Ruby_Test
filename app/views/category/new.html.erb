@@ -1,0 +1,22 @@
+<h1>Create a Class</h1>
+
+<%= form_for @category, url: category_index_path, html: {method: :post} do |f|%>
+    <p>
+      <label for = 'category_name'>Class Name</label>
+      <%= f.text_field 'name', autofocus: true %>
+    </p>
+    <p>
+      <label for = 'category_description'>Description</label>
+      <%= f.text_area 'description' %>
+    </p>
+    <p>
+      <label for = 'category_primary_attribute'>Primary Attribute</label>
+      <%= f.select 'primary_attribute', options_for_select(@attribute_options) %>
+    </p>
+    <p>
+      <label for = 'category_secondary_attribute'>Secondary Attribute</label>
+      <%= f.select 'secondary_attribute', options_for_select(@attribute_options) %>
+    </p>
+    <%= f.hidden_field 'campaign_id', value: @campaign_id %>
+    <%= f.submit 'Create Class' %>
+<% end %>
